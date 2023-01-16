@@ -1,0 +1,46 @@
+
+<p class="mt-3 mb-3" style="color: green"><%= notice %></p>
+
+
+  <div class="mt-5 mb-5">
+    <%= link_to "Retourner vers emprunts", emprunts_path %>
+  </div>
+
+ <div class="mb-5" >
+   <div class="d-flex w-100 mb-2">
+        <div class="w-25">Emprunt ID:</div>
+        <div><strong><%= "#{@emp[0]['emprunt_id'] }"%></strong> </div>
+    </div>
+    <div class="d-flex w-100 mb-2">
+        <div class="w-25">Adherent ID:</div>
+        <div><strong><%= "#{@emp[0]['adherent_id'] }"%></strong> </div>
+    </div>
+    <div class="d-flex w-100 mb-2">
+      <div class="w-25">Nom et Prenom:</div>
+      <div><strong><%= "#{@emp[0]['ad_nom']} #{@emp[0]['ad_prenom']}"%></strong> </div>
+    </div>
+
+  <% if @is_ordinateur%>
+    <div class="d-flex w-100 mb-2">
+      <div class="w-25">Ordinateur:</div>
+      <div><strong><%= "#{@emp[0]['materiel_name']}"%></strong> </div>
+    </div>
+  <% end %>
+   <% if @is_document%>
+   <div class="d-flex w-100 mb-2">
+      <div class="w-25">Document:</div>
+      <div><strong><%= "#{@emp[0]['document_name']}"%></strong> </div>
+    </div>
+  <% end %>
+
+  <div class="d-flex w-100 mb-2">
+      <div class="w-25">Emprunté:</div>
+      <div><strong> <%= Date.parse(@emp[0]["created_at"]).strftime("%Y-%m-%d %H:%M") %></strong> </div>
+    </div>
+
+  </div>
+   
+<div class="mt-5" >
+      <%= button_to "Rendre cet element", @emprunt, method: :delete, class: "btn btn-outline-danger" %>
+
+</div>

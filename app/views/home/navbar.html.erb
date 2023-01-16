@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-sm navbar-light bg-dark">
+
+<%= link_to root_path do %>
+   <%= image_tag "Biblio.jpeg", style: "width: 40px" %>
+<% end %>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse sidenav" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+        <%= link_to "Adherent", adherents_path, class:"nav-link text-light" 
+        %>
+        </li>
+         <li class="nav-item">
+        <%= link_to "Documents", documents_path, class:"nav-link text-light" %>
+        </li>
+        <li class="nav-item">
+        <%= link_to "Auteurs", auteurs_path, class:"nav-link text-light" %>
+        </li>
+        <li class="nav-item">
+        <%= link_to "Materiel", materiels_path, class:"nav-link text-light" %>
+        </li>
+        <li class="nav-item">
+        <%= link_to "Emprunts", emprunts_path, class:"nav-link text-light" %>
+        </li>
+      </ul>
+    </div>
+  </nav>

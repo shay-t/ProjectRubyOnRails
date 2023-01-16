@@ -1,0 +1,25 @@
+<div class="container mt-5">
+  <div class="mb-5" >
+    <div class="d-flex w-100 mb-2">
+        <div class="w-25">ID:</div>
+        <div><strong><%= @auteur.id %></strong> </div>
+      </div>
+
+    <div class="d-flex w-100 mb-2">
+      <div class="w-25">Nom:</div>
+      <div><strong><%= @auteur.nom_prenom %></strong> </div>
+    </div>
+
+    <div class="d-flex w-100 mb-2">
+      <div class="w-25">Docuemtn ID:</div>
+      <div><strong><%= @auteur.document_id ? @auteur.document_id : 'Non enregistré.' %></strong> </div>
+    </div>
+  </div>
+  <div class="mb-2" >
+     <%= link_to "Editer cet auteur",  edit_auteur_path(@auteur) %> |
+      <%= link_to "retour", auteurs_path %>
+  </div>
+   
+
+    <%= button_to "Supprimer cet auteur", @auteur, method: :delete, class: "btn btn-outline-danger" %>
+</div>

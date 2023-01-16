@@ -1,0 +1,28 @@
+<p style="color: green"><%= notice %></p>
+
+<div class="d-flex justify-content-between align-items-center mt-5 mb-5">
+  <h1 class="mb-0 pb-0" >Materiels</h1>
+  <%= button_to "", new_materiel_path, class:"btn btn-outline-primary bi bi-plus", :method => "get" %>
+</div>
+
+<div id="materiels">
+<table class="table" >
+  <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Type</th>
+          <th scope="col">Nom</th>
+          <th scope="col">Created</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @materiels.each do |materiel| %>
+        <%= render materiel %>
+      <% end %>
+      </tbody>
+    </table>
+
+</div>
+
+<%= link_to "New materiel", new_materiel_path %>
